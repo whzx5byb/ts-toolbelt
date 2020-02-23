@@ -16,5 +16,6 @@ let usdWallet = 15 as USD
 eurWallet = usdWallet // error
 ```
 */
+const UniqueSymbol = Symbol();
 export type Type<A extends any, Id extends string> =
-    A & {__type: Id}
+    A & {[K in typeof UniqueSymbol]: Id}
